@@ -1,0 +1,21 @@
+{
+  "name": "Email client app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "samir"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "^0.6.1"
+  }
+}
