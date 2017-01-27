@@ -1,24 +1,26 @@
-# README
+# Email client app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SSL
+------
 
-Things you may want to cover:
+```bash
+$ openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+...
+$ openssl rsa -passin pass:x -in server.pass.key -out localhost.key
+writing RSA key
+$ rm server.pass.key
+$ openssl req -new -key localhost.key -out localhost.csr
+...
+Country Name (2 letter code) [AU]:UK
+...
+A challenge password []:
+...
 
-* Ruby version
+$ openssl x509 -req -sha256 -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run
+------
+```bash
+$ thin start -p 3000 --ssl --ssl-key-file ~/.ssl/localhost.key --ssl-cert-file ~/.ssl/localhost.crt
+```

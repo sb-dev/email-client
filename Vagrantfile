@@ -21,6 +21,7 @@ sudo apt-get install \
   libcurl4-openssl-dev\
   python-software-properties \
   language-pack-en \
+  thin \
   -y 2> /dev/null
 # install Postgres
 sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
