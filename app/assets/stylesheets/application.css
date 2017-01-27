@@ -155,6 +155,9 @@ a {
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
 }
+.email-item > a {
+    color: initial;
+}
 .email-avatar {
     border-radius: 50%;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */

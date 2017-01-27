@@ -1,18 +1,20 @@
 <div id="list" class="pure-u-1">
   <% @conversations.each do |conv| %>
-  <div class="email-item email-item-selected">
+  <div class="email-item <%= 'email-item-selected' if conv.id === params[:id].to_i %>">
+    <%= link_to(conv) do %>
     <div class="pure-u">
         <div class="email-avatar <%= conv.color %>"><%= conv.sender[0] %></div>
-      </div>
+    </div>
 
-      <div class="pure-u-3-4">
+    <div class="pure-u-3-4">
         <h5 class="email-name"><%= conv.sender %></h5>
         <h4 class="email-subject"><%= conv.subject %></h4>
         <p class="email-desc">
           <%= conv.last_message %>
         </p>
-      </div>
     </div>
+    <% end %>
+  </div>
   <% end %>
 
   <!--<div class="email-item email-item-unread pure-g">-->
